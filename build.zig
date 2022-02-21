@@ -59,9 +59,8 @@ pub fn build(b: *Builder) !void {
 
     const monitor = b.step("monitor", "Opens a monitor to the serial output");
     const screen = b.addSystemCommand(&.{
-        "screen",
+        "tio",
         tty,
-        "115200",
     });
     monitor.dependOn(&screen.step);
 
